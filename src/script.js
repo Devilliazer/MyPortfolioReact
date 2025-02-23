@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   header.addEventListener("click", () => {
-    alert("Ласкаво прошу, Dmytro!");
+    alert("Hello, I'm Dmytro!");
   });
 
   const avatar = document.querySelector("section img");
   avatar.addEventListener("click", () => {
-    alert("Це моє фото, дякую за увагу!😊");
+    alert("This is my photo, thank you for your attention!😊");
   });
 });
 const toggleInfo = document.getElementById("toggleInfo");
@@ -15,10 +15,10 @@ const extraInfo = document.getElementById("extraInfo");
 toggleInfo.addEventListener("click", () => {
   if (extraInfo.style.display === "none") {
     extraInfo.style.display = "block";
-    toggleInfo.textContent = "Приховати";
+    toggleInfo.textContent = "Hide";
   } else {
     extraInfo.style.display = "none";
-    toggleInfo.textContent = "Дізнатися більше";
+    toggleInfo.textContent = "Learn more";
   }
 });
 const form = document.querySelector("form");
@@ -50,14 +50,14 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => {
       if (response.ok) {
-        alert("Ваше повідомлення успішно надіслано!");
+        alert("Your message has been sent successfully!");
         form.reset(); // Очищаємо форму після успішного надсилання
       } else {
-        alert("Сталася помилка. Будь ласка, спробуйте ще раз.");
+        alert("An error occurred. Please try again.");
       }
     })
     .catch((error) => {
-      alert("Не вдалося відправити форму. Перевірте ваше з'єднання.");
+      alert("The form could not be submitted. Please check your connection.");
     });
 });
 
@@ -125,12 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("todo").insertAdjacentHTML(
     "beforeend",
-    `<button id="add-task">Додати задачу</button>`
+    `<button id="add-task">Add task</button>`
   );
 
   document.getElementById("add-task").addEventListener("click", () => {
     const tasks = getTasks();
-    tasks.push({ text: "Нова задача" });
+    tasks.push({ text: "New task" });
     saveTasks(tasks);
     renderTasks();
   });
